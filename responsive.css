@@ -1,0 +1,138 @@
+@media (max-width: 1024px) {
+    /* --- HEADER --- */
+    .logo_header {
+        width: 120px;
+        height: 120px;
+    }
+    .navbar-list {
+        gap: 15px; /* Reducimos el gap de los enlaces */
+    }
+    .navbar-list li a {
+        font-size: 14px;
+    }
+
+    /* --- SECCIÓN 2 --- */
+    .seccion2 {
+        height: auto;
+        padding: 20px 10px;
+    }
+    .seccion-info {
+        width: 60%;
+    }
+    
+    /* --- SECCIÓN 3 --- */
+    .sec3-hero {
+        flex-wrap: wrap; 
+        padding: 0 10px;
+    }
+    /* En Tablet, los héroes ocupan la mitad del ancho para caber en dos columnas */
+    .hero1, .hero2, .hero3 {
+        width: 45%; 
+        min-width: 300px; /* Aseguramos un mínimo */
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    /* --- HEADER Y NAVEGACIÓN --- */
+    header {
+        height: auto;
+        flex-direction: column; /* Apilamos logo y navbar */
+        padding: 15px 0;
+    }
+    .logo_header {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .navbar {
+        width: 100%;
+    }
+    .navbar-list {
+        flex-wrap: wrap; /* Permite que los enlaces se muestren en dos o más filas */
+        justify-content: space-around;
+        gap: 10px;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .navbar-list li {
+        width: 45%; /* Cada elemento ocupa casi la mitad para tener dos columnas */
+        text-align: center;
+    }
+    .nav__item:hover {
+        padding: 5px;
+    }
+
+    /* --- SECCIÓN 1 --- */
+    .seccion1 {
+        height: 300px;
+        gap: 20px;
+    }
+    .seccion1 h1 {
+        font-size: 24px;
+        padding: 0 10px;
+    }
+
+    /* --- SECCIÓN 2 --- */
+    .seccion2 {
+        flex-direction: column; /* Apilamos imagen y texto */
+        height: auto;
+        padding: 20px 15px;
+    }
+    .img-sec2 {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+    .seccion-info {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+    .seccion-info h1 {
+        font-size: 30px;
+    }
+    
+    /* --- SECCIÓN 3 --- */
+    .seccion3 {
+        padding: 20px 10px;
+    }
+    .sec3-hero {
+        flex-direction: column; /* Apilamos los tres héroes verticalmente */
+        margin-top: 20px;
+    }
+    .hero1, .hero2, .hero3 {
+        width: 90%; /* Ocupa casi todo el ancho */
+        height: 350px;
+        min-width: unset;
+    }
+    
+    /* HERO PERGAMINO */
+    .hero-pergamino {
+        height: 300px;
+    }
+    .hero-pergamino h2 {
+        font-size: 25px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+        height: auto;
+        flex-direction: column; /* Apilamos el contenido del footer */
+        padding: 20px 10px;
+        gap: 20px;
+    }
+    .nav-footer-list {
+        flex-direction: column; /* Apilamos los enlaces del footer */
+        gap: 10px;
+    }
+    .content-logo {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-list li {
+        width: 100%; /* Cada enlace ocupa toda la fila */
+    }
+}
