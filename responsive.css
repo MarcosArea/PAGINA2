@@ -1,180 +1,121 @@
-@media (max-width: 1300px) {
-    /* Sección 3 */
-    .sec3-hero {
-        /* Permite que los héroes se reorganicen en dos filas si es necesario */
-        justify-content: space-around;
-        gap: 30px;
-    }
-
-    .hero1,
-    .hero2,
-    .hero3 {
-        width: 45%; /* Dos elementos por fila */
-        max-width: 450px;
+@media (min-width: 1024px) {
+    .hero1, .hero2, .hero3 {
+        width: 400px; /* Vuelve al tamaño original en pantallas grandes */
+        height: 400px;
     }
 }
 
-@media (max-width: 1139px) {
-    .hero-pergamino h2 {
-        font-size: 28px;
-    }
-}
-
-
-/*
- * ----------------------------------------
- * 2. Móviles Grandes / Tablets Vertical (Max-width: 768px)
- * ----------------------------------------
-*/
-@media (max-width: 785px) {
-    /* Header y Navegación */
-    header {
-        height: auto;
-        flex-direction: column;
-        gap: 15px;
-        padding-bottom: 15px;
+/* ======================================= */
+/* 📱 MEDIA QUERY: TABLET Y MÓVIL (<= 768px) */
+/* ======================================= */
+@media (max-width: 790px) {
+    /* --- NAVBAR Y MENÚ HAMBURGUESA --- */
+    .logo_menu {
+        display: block; /* Muestra el ícono de la hamburguesa */
     }
 
-    .logo_header {
-        width: 120px;
-        height: 120px;
-    }
+    /* Estilos del menú cerrado en móvil */
+    .ul_list {
+        /* --- CORRECCIÓN AQUÍ --- */
+        background-color: black; /* 1. Color de fondo de seguridad */
+        
+        /* Tu fondo original */
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(0, 0, 0)), url(./img/jeroglificos-egipcios-en-la-pared.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        /* Aseguramos que no haya bordes extras */
+        border: none; 
+        box-shadow: none; 
+        /* ----------------------- */
 
-    .navbar-list {
-        gap: 15px;
-        flex-wrap: wrap; /* Permite que los ítems del menú se envuelvan si hay muchos */
+        width: 100%;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        height: 0;
+        overflow: hidden;
+        display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        transition: all 0.5s;
+        z-index: 10;
     }
     
-    .navbar-list li a {
-        font-size: 14px;
+    /* Estado ABIERTO del menú (cuando el checkbox está marcado) */
+    .menu_hamburguesa:checked + .ul_list {
+        height: calc(100vh - 100px); /* Ocupa la altura de la vista menos la cabecera */
     }
     
-    /* Sección 2 */
-    .seccion2 {
-        flex-direction: column; /* Apila el contenido y la imagen */
-        height: auto; /* Altura automática para que quepa todo */
-        padding: 40px 20px;
+    .link {
+        font-size: 17px;
     }
 
-    .img-sec2 {
-        width: 100px;
-        height: 100px;
+    /* --- SECCIÓN 2 --- */
+    .seccion2 {
+        flex-direction: column; /* Apilar en vertical */
+        height: auto;
+        min-height: 500px;
+        text-align: center;
     }
 
     .seccion-info {
-        width: 90%; /* Ocupa más ancho */
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 0 20px;
     }
     
     .seccion-info h1 {
         font-size: 30px;
     }
-
-    /* Sección 3 */
-    .seccion3 h1 {
-        font-size: 30px;
+    
+    .img-sec2 {
+        margin-top: 20px;
+        flex-shrink: 0;
     }
 
+    /* --- SECCIÓN 3 --- */
     .sec3-hero {
-        flex-direction: column; /* Apila los 3 héroes uno encima del otro */
-        gap: 40px;
+        flex-direction: column; /* Apilar en vertical */
         margin-top: 20px;
     }
 
     .hero1,
     .hero2,
     .hero3 {
-        width: 90%; /* Ocupa casi todo el ancho */
-        max-width: 500px;
-        margin: 0 auto; /* Centrar */
-    }
-    
-    .hero-pergamino {
-        height: 300px; /* Reducir la altura */
+        width: 90%; /* Ocupa la mayor parte del ancho */
+        max-width: 400px;
+        height: 350px;
     }
     
     .hero-pergamino h2 {
-        font-size: 16px;
-    }
-
-    /* Footer */
-    footer {
-        height: auto; /* Altura automática */
-        flex-direction: column;
-        gap: 30px;
-        padding: 20px 0;
-    }
-
-    .content-logo {
-        order: 1; /* Mueve el logo y el texto al inicio */
-    }
-
-    .nav-footer {
-        order: 2;
-    }
-    
-    .final {
-        order: 3;
-        font-size: 16px;
-    }
-}
-
-
-/*
- * ----------------------------------------
- * 3. Móviles Pequeños (Max-width: 480px)
- * ----------------------------------------
-*/
-@media (max-width: 622px) {
-    
-    /* Header y Navegación */
-    .navbar-list {
-        gap: 10px;
-    }
-    
-    .navbar-list li a {
-        font-size: 12px;
-    }
-    
-    /* Sección 1 */
-    .seccion1 {
-        height: 350px;
-        gap: 20px;
-    }
-
-    .seccion1 h1 {
-        font-size: 24px;
-    }
-
-    .seccion1 h2 {
-        font-size: 16px;
-    }
-
-    /* Sección 2 */
-    .seccion-info h1 {
-        font-size: 24px;
-    }
-
-    .seccion-info h2 {
         font-size: 18px;
     }
 
-    /* Sección 3 */
-    .seccion3 h1 {
-        font-size: 25px;
+    /* --- FOOTER --- */
+    footer {
+        flex-direction: column; /* Apilar en vertical */
+        height: auto;
+        gap: 20px;
         text-align: center;
     }
-
-    .hero-pergamino h2 {
-        font-size: 10px;
+    
+    .nav-footer {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    /* Footer */
     .nav-footer-list {
-        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
     
-    .nav-footer-list a {
-        font-size: 14px;
+    .final {
+        width: 100%;
+        font-size: 16px;
+        margin-top: 10px;
     }
 }

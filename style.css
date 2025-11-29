@@ -1,7 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pinyon+Script&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 
 
 * {
@@ -17,61 +15,80 @@ body {
     background-image: url(./img/fondo\ de\ la\ web.png);
     background-size: cover;
     background-attachment: fixed;
-    
+    /* NUEVO: Evita que aparezca scroll horizontal y bordes blancos */
+    overflow-x: hidden; 
+    width: 100%;
 }
 
+/* --- HEADER Y NAVBAR (Estilos de escritorio por defecto) --- */
 header {
     background-color: rgb(23, 21, 21);
-    width: 100%;
     height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    
 }
 
 .logo_header {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
 }
 
 .navbar {
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 0px 20px;
+    position: relative;
 }
 
-.navbar-list {
-    display: flex;
+/* Ícono del menú hamburguesa (Oculto por defecto en escritorio) */
+.logo_menu {
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    display: none; /* Se mostrará en la media query de móvil */
+}
+
+/* Checkbox (Oculto siempre) */
+.menu_hamburguesa {
+    display: none;
+}
+
+/* Lista de navegación (Estilos de escritorio) */
+.ul_list {
+    background: none;
+    width: auto;
+    /*Anchoautomáticoparaescritorio*/position: static;
+    /*Posiciónestáticaenescritorio*/height: 100%;
+    /*Alturacompletadelacabecera*/display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 10px;
-    gap: 20px;
+    /*Alinearaladerechaenescritorio*/align-items: center;
+    flex-direction: row;
+    /*Horizontalenescritorio*/gap: 20px;
+    /*Reducidoa20pxparaunmejorajuste*/transition: none;
+    overflow: visible;
 }
 
 
-.navbar-list li a {
+.ul_list li a {
     color: #C7A45A;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .nav__item:hover {
-   border: 1px solid rgba(250, 250, 0, 0.466);
-   padding: 10px;
-   border-radius: 20px;
-   background-color: rgba(164, 164, 155, 0.039);
-   transition: 0.5s;
-   -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   -ms-border-radius: 20px;
-   -o-border-radius: 20px;
-   -webkit-transition: 0.5s;
-   -moz-transition: 0.5s;
-   -ms-transition: 0.5s;
-   -o-transition: 0.5s;
+    border: 1px solid rgba(250, 250, 0, 0.466);
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgba(164, 164, 155, 0.039);
+    transition: 0.5s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
 }
 
 main {
@@ -81,6 +98,7 @@ main {
     align-items: center;
 }
 
+/* --- SECCIÓN 1 --- */
 .seccion1 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.498), rgba(0, 0, 0, 0.406)), url(./img/atardecer\ egipcio.png);
     background-position: center center;
@@ -93,6 +111,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    padding: 20px; /* Añadido padding para móvil */
 }
 
 .seccion1 h1 {
@@ -105,6 +124,7 @@ main {
 .seccion1 h2 {
     color: white;
     font-size: 18px;
+    text-align: center; /* Asegurar alineación en móvil */
 }
 
 .seccion1 li a {
@@ -119,6 +139,7 @@ main {
     -o-border-radius: 20px;
 }
 
+/* --- SECCIÓN 2 (Estilos de escritorio) --- */
 .seccion2 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.621), rgba(234, 234, 234, 0.018)), url(./img/SECCION\ 2.jpg);
     background-position: center center;
@@ -136,6 +157,7 @@ main {
 .img-sec2 {
     width: 150px;
     height: 150px;
+    flex-shrink: 0;
 }
 
 .seccion-info {
@@ -146,6 +168,7 @@ main {
     color: white;
     gap: 20px;
     width: 50%;
+    text-align: center;
 }
 
 .seccion-info h1 {
@@ -169,6 +192,7 @@ main {
     -o-border-radius: 20px;
 }
 
+/* --- SECCIÓN 3 (Estilos de escritorio) --- */
 .seccion3 {
     background-color: rgba(23, 21, 21, 0.932);
     width: 100%;
@@ -179,7 +203,7 @@ main {
     align-items: center;
     gap: 20px;
     color: white;
-    padding-top: 40px;
+    padding: 40px 20px;
 }
 
 .seccion3 h1 {
@@ -193,6 +217,9 @@ main {
     margin-top: 50px;
     gap: 20px;
     text-align: center;
+    /* NUEVO: Permite que los elementos bajen si no entran */
+    flex-wrap: wrap; 
+    width: 100%; /* Asegura que use todo el ancho disponible */
 }
 
 .faraon {
@@ -207,11 +234,15 @@ main {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 400px;
-    height: 400px;
+    width: 300px; /* Reducido para que quepan 3 en escritorio/tablet grande */
+    height: 350px;
     align-content: center;
     justify-content: center;
     font-size: 13px;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
 }
 
 .hero1 {
@@ -266,8 +297,11 @@ main {
     background-size: cover;
     width: 100%;
     height: 400px;
-    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
 .hero-pergamino h2 {
@@ -276,8 +310,10 @@ main {
     font-style: italic;
     color: rgba(0, 0, 0, 0.642);
     font-size: 35px;
+    max-width: 80%;
 }
 
+/* --- FOOTER (Estilos de escritorio) --- */
 footer {
     background: black;
     width: 100%;
@@ -285,6 +321,8 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
 }
 
 .redes {
