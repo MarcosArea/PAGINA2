@@ -1,138 +1,180 @@
-@media (max-width: 1024px) {
-    /* --- HEADER --- */
+@media (max-width: 1300px) {
+    /* Sección 3 */
+    .sec3-hero {
+        /* Permite que los héroes se reorganicen en dos filas si es necesario */
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    .hero1,
+    .hero2,
+    .hero3 {
+        width: 45%; /* Dos elementos por fila */
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 1139px) {
+    .hero-pergamino h2 {
+        font-size: 28px;
+    }
+}
+
+
+/*
+ * ----------------------------------------
+ * 2. Móviles Grandes / Tablets Vertical (Max-width: 768px)
+ * ----------------------------------------
+*/
+@media (max-width: 785px) {
+    /* Header y Navegación */
+    header {
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+
     .logo_header {
         width: 120px;
         height: 120px;
     }
+
     .navbar-list {
-        gap: 15px; /* Reducimos el gap de los enlaces */
+        gap: 15px;
+        flex-wrap: wrap; /* Permite que los ítems del menú se envuelvan si hay muchos */
+        justify-content: center;
     }
+    
     .navbar-list li a {
         font-size: 14px;
     }
-
-    /* --- SECCIÓN 2 --- */
+    
+    /* Sección 2 */
     .seccion2 {
-        height: auto;
-        padding: 20px 10px;
+        flex-direction: column; /* Apila el contenido y la imagen */
+        height: auto; /* Altura automática para que quepa todo */
+        padding: 40px 20px;
     }
-    .seccion-info {
-        width: 60%;
-    }
-    
-    /* --- SECCIÓN 3 --- */
-    .sec3-hero {
-        flex-wrap: wrap; 
-        padding: 0 10px;
-    }
-    /* En Tablet, los héroes ocupan la mitad del ancho para caber en dos columnas */
-    .hero1, .hero2, .hero3 {
-        width: 45%; 
-        min-width: 300px; /* Aseguramos un mínimo */
-        height: 380px;
-    }
-}
 
-@media (max-width: 768px) {
-    
-    /* --- HEADER Y NAVEGACIÓN --- */
-    header {
-        height: auto;
-        flex-direction: column; /* Apilamos logo y navbar */
-        padding: 15px 0;
-    }
-    .logo_header {
+    .img-sec2 {
         width: 100px;
         height: 100px;
-        margin-bottom: 10px;
-    }
-    .navbar {
-        width: 100%;
-    }
-    .navbar-list {
-        flex-wrap: wrap; /* Permite que los enlaces se muestren en dos o más filas */
-        justify-content: space-around;
-        gap: 10px;
-        width: 100%;
-        padding: 0 10px;
-    }
-    .navbar-list li {
-        width: 45%; /* Cada elemento ocupa casi la mitad para tener dos columnas */
-        text-align: center;
-    }
-    .nav__item:hover {
-        padding: 5px;
     }
 
-    /* --- SECCIÓN 1 --- */
-    .seccion1 {
-        height: 300px;
-        gap: 20px;
-    }
-    .seccion1 h1 {
-        font-size: 24px;
-        padding: 0 10px;
-    }
-
-    /* --- SECCIÓN 2 --- */
-    .seccion2 {
-        flex-direction: column; /* Apilamos imagen y texto */
-        height: auto;
-        padding: 20px 15px;
-    }
-    .img-sec2 {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 15px;
-    }
     .seccion-info {
-        width: 100%; /* Ocupa todo el ancho disponible */
+        width: 90%; /* Ocupa más ancho */
     }
+    
     .seccion-info h1 {
         font-size: 30px;
     }
-    
-    /* --- SECCIÓN 3 --- */
-    .seccion3 {
-        padding: 20px 10px;
-    }
-    .sec3-hero {
-        flex-direction: column; /* Apilamos los tres héroes verticalmente */
-        margin-top: 20px;
-    }
-    .hero1, .hero2, .hero3 {
-        width: 90%; /* Ocupa casi todo el ancho */
-        height: 350px;
-        min-width: unset;
-    }
-    
-    /* HERO PERGAMINO */
-    .hero-pergamino {
-        height: 300px;
-    }
-    .hero-pergamino h2 {
-        font-size: 25px;
+
+    /* Sección 3 */
+    .seccion3 h1 {
+        font-size: 30px;
     }
 
-    /* --- FOOTER --- */
+    .sec3-hero {
+        flex-direction: column; /* Apila los 3 héroes uno encima del otro */
+        gap: 40px;
+        margin-top: 20px;
+    }
+
+    .hero1,
+    .hero2,
+    .hero3 {
+        width: 90%; /* Ocupa casi todo el ancho */
+        max-width: 500px;
+        margin: 0 auto; /* Centrar */
+    }
+    
+    .hero-pergamino {
+        height: 300px; /* Reducir la altura */
+    }
+    
+    .hero-pergamino h2 {
+        font-size: 16px;
+    }
+
+    /* Footer */
     footer {
-        height: auto;
-        flex-direction: column; /* Apilamos el contenido del footer */
-        padding: 20px 10px;
-        gap: 20px;
-    }
-    .nav-footer-list {
-        flex-direction: column; /* Apilamos los enlaces del footer */
-        gap: 10px;
-    }
-    .content-logo {
+        height: auto; /* Altura automática */
         flex-direction: column;
-        gap: 10px;
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .content-logo {
+        order: 1; /* Mueve el logo y el texto al inicio */
+    }
+
+    .nav-footer {
+        order: 2;
+    }
+    
+    .final {
+        order: 3;
+        font-size: 16px;
     }
 }
 
-@media (max-width: 480px) {
-    .navbar-list li {
-        width: 100%; /* Cada enlace ocupa toda la fila */
+
+/*
+ * ----------------------------------------
+ * 3. Móviles Pequeños (Max-width: 480px)
+ * ----------------------------------------
+*/
+@media (max-width: 622px) {
+    
+    /* Header y Navegación */
+    .navbar-list {
+        gap: 10px;
+    }
+    
+    .navbar-list li a {
+        font-size: 12px;
+    }
+    
+    /* Sección 1 */
+    .seccion1 {
+        height: 350px;
+        gap: 20px;
+    }
+
+    .seccion1 h1 {
+        font-size: 24px;
+    }
+
+    .seccion1 h2 {
+        font-size: 16px;
+    }
+
+    /* Sección 2 */
+    .seccion-info h1 {
+        font-size: 24px;
+    }
+
+    .seccion-info h2 {
+        font-size: 18px;
+    }
+
+    /* Sección 3 */
+    .seccion3 h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .hero-pergamino h2 {
+        font-size: 10px;
+    }
+
+    /* Footer */
+    .nav-footer-list {
+        gap: 20px;
+    }
+    
+    .nav-footer-list a {
+        font-size: 14px;
     }
 }
