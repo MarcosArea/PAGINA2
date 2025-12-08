@@ -1,0 +1,86 @@
+@media (max-width: 768px) {
+    
+    .content {
+        /* Apilar los elementos verticalmente */
+        flex-direction: column;
+        height: auto; /* La altura se ajusta al contenido */
+    }
+
+    /* Ajustes para el Panel de la Imagen (derecho) */
+    .derecho {
+        width: 100%; /* Ocupa todo el ancho */
+        height: 400px; /* Reducir la altura de la imagen para móviles */
+        justify-content: center; /* Centrar el contenido verticalmente en lugar de flex-end */
+    }
+
+    /* Ajustes para el contenido de la Imagen */
+    .arriba {
+        position: static; /* Volver a flujo normal */
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Ocultar contenido secundario en la imagen para ahorrar espacio */
+    .abajo {
+        display: none; 
+    }
+    
+    /* Ajustes para el Panel del Formulario (izquierdo) */
+    .izquierdo {
+        width: 100%; /* Ocupa todo el ancho */
+        height: auto; /* La altura se ajusta al contenido del formulario */
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .izq-arriba {
+        margin-top: 0;
+    }
+
+    /* Ajuste para los botones de Redes Sociales */
+    .contenedor-btn {
+        gap: 10px;
+    }
+
+    .google{
+        width: 100px; /* Los botones sociales ocupan todo el ancho disponible */
+    }
+} 
+
+@media (max-width: 480px) {
+    
+    /* Adaptar los botones sociales para que no ocupen tanto espacio apilados */
+    .contenedor-btn {
+        flex-direction: row; /* Volvemos a poner los botones en línea */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .google {
+        font-size: 20px;
+        width: auto;
+        padding: 8px;
+
+    }
+
+    /* Hacemos que Facebook y X sean solo iconos */
+    .facebook {
+        font-size: 20px;
+    }
+    
+    .google p {
+        display: none; /* Ocultamos el texto "Google" y solo dejamos el ícono (si lo tienes en el HTML) */
+    }
+
+    /* Aseguramos que el formulario y el divisor sigan centrados y limitados */
+    .Login, .divider, .contenedor-btn {
+        max-width: 90%; /* Usar más del ancho disponible en pantallas estrechas */
+    }
+
+    .arriba {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
